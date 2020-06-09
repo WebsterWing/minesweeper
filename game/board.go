@@ -101,6 +101,7 @@ func (b *Board) setupFirstClick(x, y int) {
 	}
 }
 
+// Get a list of neigboring coordinate tiles
 func (b *Board) neigborCoords(x, y int) [][2]int {
 	ret := make([][2]int, 0, 8)
 
@@ -108,7 +109,8 @@ func (b *Board) neigborCoords(x, y int) [][2]int {
 		xAdj := (i % 3) - 1
 		yAdj := i/3 - 1
 
-		if x == 0 && y == 0 {
+		// The coordinate passed in isn't a neigbor
+		if xAdj == 0 && yAdj == 0 {
 			continue
 		}
 
